@@ -1,0 +1,213 @@
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+}
+
+:root {
+    --bg: #141e30;
+    --surface: #1f2b44;
+    --text: #f5f5f7;
+    --accent: #4da3ff;
+    --warn: #ff5a5f;
+    --font-title: "Black Han Sans", sans-serif;
+    --font-body: "Song Myung", sans-serif;
+    --gap: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+    color: #222;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    background: #fff;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(255, 193, 7, 0.6);
+}
+
+.card.no-poster .poster-fallback {
+    aspect-ratio: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    font-family: var(--font-title);
+    background: linear-gradient(135deg, var(--accent), var(--surface));
+}
+
+.poster {
+    width: 100%;
+    display: block;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #ffc107;
+    color: #222;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.detail {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+}
+
+.detail img {
+    width: 100%;
+}
+
+.detail-page {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.75)),
+        url("https://image.tmdb.org/t/p/w1280/5TMyytCI5Pfc9c1eNsljiCdiB05.jpg");
+
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.rank {
+    position: absolute;
+    top: 12px;
+    left: 12px
+}
+
+.change.up::before {
+    content: "▲";
+    color: var(--warn);
+}
+
+.change.down::before {
+    content: "▼";
+    color: var(--accent);
+}
+
+.change.new::before {
+    content: "NEW";
+    color: var(--warn);
+}
+
+.board {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://image.tmdb.org/t/p/w1280/rVOll8XOde5BuIF4tGO1q0pfngQ.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 40vh;
+    padding: 24px;
+    box-sizing: border-box;
+    color: #fff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: column;
+
+
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main,
+.top,
+.hero,
+footer {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+}
+
+h1 {
+    color: #fff;
+}
+
+footer {
+    color: #fff;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero {
+        height: 60vh;
+    }
+
+    .card-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 600px) {
+    .nav {
+        display: flex;
+    }
+
+    .detail {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .board {
+        grid-template-columns: repeat(2, 1fr) repeat(4, 1fr);
+    }
+
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
