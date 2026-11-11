@@ -127,7 +127,7 @@ header {
 }
 
 .hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://image.tmdb.org/t/p/w1280/rVOll8XOde5BuIF4tGO1q0pfngQ.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://riocinemas.vn/Areas/Admin/Content/Fileuploads/images/poster%20web/t10/chi-chi-em-em-3-500_1791359694486%20(1).jpg");
     background-size: cover;
     background-position: center;
     min-height: 40vh;
